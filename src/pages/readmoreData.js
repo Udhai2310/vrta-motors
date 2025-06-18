@@ -5,8 +5,8 @@ export default [
         headerDesc:"At VRTA Motors, your car’s health and appearance are our top priorities. Whether it’s periodic maintenance or accidental repair, we deliver services that you can trust. Book your appointment today and experience automotive care like never before.",
         pageTitle:"Periodic Services: Keeping Your Car in Peak Condition",
         pageDesc:"Regular maintenance is the key to your car’s longevity and performance. At Symphony Motors, we offer comprehensive periodic services tailored to your vehicle’s specific needs, ensuring it remains safe, efficient, and reliable on the road. Our services include:",
-        backgroundImg:"ac-service.jpg",
-        pageImg:"ac-service.jpg",
+        backgroundImg:"minor-services.jpg",
+        pageImg:"minor-service.jpg",
         pageTitle1:"Accidental Repairs: Restoring Your Car to Perfection",
         pageDesc1:"Accidents can happen, but with Symphony Motors, your car will be in expert hands. Our accidental repair services ensure that your vehicle is restored to its original condition with precision and attention to detail. We specialize in:",
         
@@ -73,8 +73,8 @@ export default [
         headerDesc:"At VRTA Motors, we combine expertise and cutting-edge technology to tackle complex repairs like engine and transmission overhauls. Trust us to bring your vehicle back to peak performance. Contact us today to schedule an assessment.",
         pageTitle:"Automatic Transmission Overhaul: Seamless Gear Transitions",
         pageDesc:"A faulty transmission can disrupt your driving experience. Our automatic transmission overhaul services focus on restoring smooth gear shifts and optimal performance. We handle:",
-        backgroundImg:" ",
-        pageImg:" ",
+        backgroundImg:"transmission.jpg",
+        pageImg:"transmission.jpg",
         pageTitle1:"Engine Overhaul: Reviving Your Car’s Heart",
         pageDesc1:"When your car’s engine shows signs of wear, an engine overhaul is the solution to restore its performance and efficiency. At Symphony Motors, we specialize in complete engine rebuilds that breathe new life into your vehicle. Our services include:",
         

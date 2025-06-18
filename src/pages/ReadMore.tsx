@@ -1,10 +1,12 @@
 import { useLocation } from 'react-router-dom';
 import ReadMoreData from "@/pages/readmoreData.js";
+import { useNavigate } from "react-router-dom";
 import EnquiryForm from '@/components/enquiryform';
 
 function ReadMore() {
     const location = useLocation();
     const key = location.state?.key;
+    const navigate = useNavigate();
 
     if (!key) return <div>No key provided!</div>;
 
@@ -22,7 +24,13 @@ function ReadMore() {
                                 <div className="absolute inset-0 bg-black/60"></div>
                                 <div className="relative z-10 text-center px-4 py-12 max-w-3xl mx-auto">
                                     <h1 className="text-white text-3xl sm:text-5xl font-bold mb-4">{n.HeaderTitle}</h1>
-                                    <p className="text-white text-base sm:text-lg">{n.headerDesc}</p>
+                                    <p className="text-lg font-medium tracking-wide text-gray-300">
+                                        <span
+                                         onClick={() => navigate("/")}
+                                         className="cursor-pointer hover:underline text-yellow-400"
+                                        >HOME</span>{" "}
+                                        &raquo; <span className="text-white">SERVICE</span>
+                                    </p>
                                 </div>
                             </div>
                             
