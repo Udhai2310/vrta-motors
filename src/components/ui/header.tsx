@@ -12,8 +12,8 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3 group">
-            <div className="p-2 rounded-xl shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-              <img src={logo} alt="VRTA Motors" className="h-12 w-auto" />
+            <div className="p-2 rounded-xl shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 rounded">
+              <img src={logo} alt="VRTA Motors"  className="h-12 w-auto border-custom" />
             </div>
           </div>
 

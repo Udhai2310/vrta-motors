@@ -119,6 +119,9 @@
     left: 100%;
   }
 }
+.border-custom{
+  border-radius: 7px;
+}
 
 .animate-car-move {
   animation: car-move 6s ease-in-out infinite;

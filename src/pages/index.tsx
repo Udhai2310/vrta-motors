@@ -2,19 +2,19 @@ import React,{ useState, useEffect, useRef } from "react";
 import { Wrench, Car, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import minorServiceImg from '@/assets/minor-services.jpg';
-import transmissionImg from '@/assets/transmission.jpg';
-import diagnosticsImg from '@/assets/diagnostics.jpg';
-import acServiceImg from '@/assets/ac-service.jpg';
-import CodingImg from '@/assets/coding.jpg';
-import ElectricalImg from '@/assets/electrical.jpg';
+
 import shopImg from '@/assets/shop.jpg';
 import workImg from '@/assets/work.jpg';
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import ReadMore from "./ReadMore.tsx";
+import readmoreData from "./readmoreData.js";
+import ReadMoreCard from "@/components/ui/ReadMoreCard.tsx";
 
 
 const Index = () => {
+
+ 
   const navigate = useNavigate();
 
   const useCounter = (end: number, duration: number = 2000) => {
@@ -40,14 +40,7 @@ const Index = () => {
   const customersCount = useCounter(2500);
   const carsCount = useCounter(5000);
 
-  const imageMap: Record<string, string> = {
-  'minor-service': minorServiceImg,
-  'transmission': transmissionImg,
-  'diagnostics': diagnosticsImg,
-  'ac-service': acServiceImg,
-  'electrical':ElectricalImg,
-  'coding':CodingImg,
-};
+  
 
 //added for experience 
 
@@ -264,67 +257,45 @@ const steps = [
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
       {[
-        {
+        { id:1, 
           title: "Periodic Services & Suspension Repairs",
           desc: "Smooth rides start with timely care",
           bg: "minor-service",
         },
-        {
+        { id:2,
           title: "Engine Overhaul & Automatic Transmission Overhaul",
           desc: "Power restored, performance assured",
           bg: "transmission",
         },
-        {
+        { id:3,
           title: "Full Body Painting & Accident Repairs",
           desc: "Crash to classy – full body repair & paint",
           bg: "diagnostics",
         },
-        {
+        { id:4,
           title: "All Electrical & Electronic Services",
           desc: "We fix every wire and warning light",
           bg: "electrical",
         },
-        {
+        { id:5,
           title: "Programming & Coding",
           desc: "Smart coding for smarter drives",
           bg: "coding",
         },
-        {
+        { id:6,
           title: "AC and services",
           desc: "Cool comfort, guaranteed",
           bg: "ac-service",
         },
       ].map((service, index) => (
-        <div
-          key={index}
-          className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-500 h-96"
-          style={{
-            backgroundImage: `url(${imageMap[service.bg]})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition duration-300" />
+        <ReadMoreCard 
+        id = {service.id}
+        bImg = {service.bg}
+        index = {index}
+        title = {service.title}
+        desc = {service.desc}
 
-          <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
-            <div className="mb-6">
-              <h3 className="text-3xl font-bold mb-2">{service.title}</h3>
-              <p className="text-lg leading-relaxed">{service.desc}</p>
-            </div>
-
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <button className="border border-white text-white font-semibold px-5 py-2 rounded hover:bg-white hover:text-black transition">
-                Read More
-              </button>
-              <button
-                onClick={() => navigate('/contact')}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-5 py-2 rounded shadow-md transition"
-              >
-                Contact Us
-              </button>
-            </div>
-          </div>
-        </div>
+        />
       ))}
     </div>
   </div>

@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import Contact from "./pages/contact";//i added this line
 import Layout from "./pages/layouts";//line added 
 import About from "./pages/about"; //i added this line
+import ReadMore from "./pages/ReadMore";
+
 
 
 const queryClient = new QueryClient();
@@ -25,6 +27,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/contact" element={<Contact />} /> {/* Added contact route -- i added  */}
           <Route path="/about" element={<About />} /> {/* Added about route */}
+          <Route path="/readmore" element={<ReadMore />} />
           </Route>
         </Routes>
       </BrowserRouter>
