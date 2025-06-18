@@ -58,7 +58,7 @@ const About: React.FC = () => {
               New Beginnings With VRTA Motors
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              After 25 years of dedicated service as Technokrat, we have merged with Symphony Enterprises and will now operate under the name Symphony Motors from OMR. We deeply appreciate your support throughout the years and look forward to your continued trust as we embark on this exciting new chapter. Thank you for being part of our journey!
+              We are excited to announce a bold new chapter as VRTA Motors, now proudly operating from Medavakkam.With renewed passion and commitment, we look forward to continuing our journey with you — delivering excellence, innovation, and trusted service.Thank you for being a part of our story.Here’s to new roads ahead — together!— Team VRTA Motors
             </p>
           </div>
         </div>
