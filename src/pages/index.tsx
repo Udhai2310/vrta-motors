@@ -7,6 +7,7 @@ import workImg from '@/assets/work.jpg';
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import ReadMoreCard from "@/components/ui/ReadMoreCard.tsx";
+import BookForm from '../components/bookform';
 
 
 const Index = () => {
@@ -122,6 +123,7 @@ const steps = [
     return () => clearInterval(interval);
   }, []);
 
+  const [open, setOpen] = useState(false);
 
 
   return (
@@ -152,9 +154,24 @@ const steps = [
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-12 py-6 text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-yellow-500/25 rounded-xl"
+              onClick={() => setOpen(true)}
             >
               Book Appointment Now
             </Button>
+            {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="bg-gray-900 text-white rounded-xl p-8 w-full max-w-lg relative">
+            <button
+              className="absolute top-4 right-4 text-2xl"
+              onClick={() => setOpen(false)}
+            >
+              &times;
+            </button>
+            {/* Form goes here */}
+            <BookForm onClose={() => setOpen(false)} />
+          </div>
+        </div>
+      )}
           </div>
         </div>
       </section>
