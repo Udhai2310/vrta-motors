@@ -8,6 +8,8 @@ import diagnostics from '@/assets/diagnostics.jpg';
 import electrical from '@/assets/electrical.jpg';
 import coding from '@/assets/coding.jpg';
 import acservice from '@/assets/ac-service.jpg';
+import ReadMoreCard from "@/components/ui/ReadMoreCard";
+import readmore from "@/components/readmore"; 
 
 
 const Header: React.FC = () => {
@@ -101,7 +103,7 @@ const Header: React.FC = () => {
                     <button
                       onClick={() => {
                         setShowDropdown(false);
-                        navigate('/ReadMore');
+                        navigate('/readmore');
                       }}
                       className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all"
                     >
