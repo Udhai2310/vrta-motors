@@ -177,6 +177,7 @@ import diagnostics from '@/assets/diagnostics.jpg';
 import electrical from '@/assets/electrical.jpg';
 import coding from '@/assets/coding.jpg';
 import acservice from '@/assets/ac-service.jpg';
+import ReadMoreData from "@/pages/readmoreData.js";
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -184,6 +185,7 @@ const Header: React.FC = () => {
   const location = useLocation();
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -244,62 +246,68 @@ const Header: React.FC = () => {
                       className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 bg-black/80 backdrop-blur-md shadow-2xl p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[90vw] max-w-6xl border border-yellow-500/20"
                     >
                       {[
-                        {
-                          title: "Periodic Services & Suspension Repairs",
-                          img: minorservices,
-                        },
-                        {
-                          title: "Engine Overhaul & Automatic Transmission Overhaul",
-                          img: transmission,
-                        },
-                        {
-                          title: "Full Body Painting & Accident Repairs",
-                          img: diagnostics,
-                        },
-                        {
-                          title: "All Electrical & Electronic Services",
-                          img: electrical,
-                        },
-                        {
-                          title: "Programming & Coding",
-                          img: coding,
-                        },
-                        {
-                          title: "AC and services",
-                          img: acservice,
-                        },
-                      ].map((service, index) => (
-                        <div
-                          key={index}
-                          className="h-64 bg-cover bg-center rounded-xl text-white flex flex-col justify-between p-4 hover:scale-105 transition-all duration-300 relative"
-                          style={{ backgroundImage: `url(${service.img})` }}
-                        >
-                          <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
-                          <div className="relative z-10 mt-auto">
-                            <h3 className="font-semibold text-xl mb-2">{service.title}</h3>
-                            <div className="flex gap-3">
-                              <button
-                                onClick={() => {
-                                  setShowDropdown(false);
-                                  navigate('/readmore');
-                                }}
-                                className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all"
-                              >
-                                Read More
-                              </button>
-                              <button
-                                onClick={() => {
-                                  setShowDropdown(false);
-                                  navigate('/contact');
-                                }}
-                                className="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all"
-                              >
-                                Contact Us
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+  {
+    title: "Periodic Services & Suspension Repairs",
+    img: minorservices,
+    matchId: 1,
+  },
+  {
+    title: "Engine Overhaul & Automatic Transmission Overhaul",
+    img: transmission,
+    matchId: 2,
+  },
+  {
+    title: "Full Body Painting & Accident Repairs",
+    img: diagnostics,
+    matchId: 3,
+  },
+  {
+    title: "All Electrical & Electronic Services",
+    img: electrical,
+    matchId: 4,
+  },
+  {
+    title: "Programming & Coding",
+    img: coding,
+    matchId: 5,
+  },
+  {
+    title: "AC and services",
+    img: acservice,
+    matchId: 6,
+  },
+].map((service, index) => (
+  <div
+    key={index}
+    className="h-64 bg-cover bg-center rounded-xl text-white flex flex-col justify-between p-4 hover:scale-105 transition-all duration-300 relative"
+    style={{ backgroundImage: `url(${service.img})` }}
+  >
+    <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
+    <div className="relative z-10 mt-auto">
+      <h3 className="font-semibold text-xl mb-2">{service.title}</h3>
+      <div className="flex gap-3">
+        <button
+          onClick={() => {
+            setShowDropdown(false);
+            navigate('/readmore', { state: { key: service.matchId } });
+          }}
+          className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all"
+        >
+          Read More
+        </button>
+        <button
+          onClick={() => {
+            setShowDropdown(false);
+            navigate('/contact');
+          }}
+          className="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all"
+        >
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </div>
+))}
                     </div>
                   )}
                 </div>
