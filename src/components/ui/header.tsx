@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Car } from "lucide-react";
-import logo from '@/assets/logo.jpg'; 
+import logo from '@/assets/logo.jpg';
+
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <nav className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 shadow-2xl relative z-50 border-b border-yellow-500/30 backdrop-blur-sm">
@@ -24,7 +27,24 @@ const Header: React.FC = () => {
               { label: "Services", path: "/services" },
               { label: "About", path: "/about" },
               { label: "Contact", path: "/contact" },
-            ].map((item) => (
+            ].map((item) => 
+              item.label === "Services" ? (
+    <span
+      key={item.label}
+      className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium relative group py-2 cursor-pointer"
+      onClick={() => {
+        if (location.pathname === "/") {
+          document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          navigate("/", { state: { scrollTo: "services" } });
+        }
+      }}
+    >
+      {item.label}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+      <span className="absolute inset-0 rounded-lg bg-yellow-400/5 opacity-0 transition-all duration-300 group-hover:opacity-100 -z-10"></span>
+    </span>
+  ) : (
               <Link
                 key={item.label}
                 to={item.path}

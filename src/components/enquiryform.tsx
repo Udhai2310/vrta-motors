@@ -20,10 +20,6 @@ function EnquiryForm(){
           rows={4}
           className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
         ></textarea>
-        <div className="flex items-center gap-2">
-          <input type="checkbox" id="human" className="w-4 h-4" />
-          <label htmlFor="human" className="text-gray-700">I am human</label>
-        </div>
         <button
           type="submit"
           className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-300"

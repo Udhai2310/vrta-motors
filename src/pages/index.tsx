@@ -2,14 +2,12 @@ import React,{ useState, useEffect, useRef } from "react";
 import { Wrench, Car, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
 import shopImg from '@/assets/shop.jpg';
 import workImg from '@/assets/work.jpg';
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import ReadMore from "./ReadMore.tsx";
-import readmoreData from "./readmoreData.js";
 import ReadMoreCard from "@/components/ui/ReadMoreCard.tsx";
+import BookForm from '../components/bookform';
 
 
 const Index = () => {
@@ -125,6 +123,7 @@ const steps = [
     return () => clearInterval(interval);
   }, []);
 
+  const [open, setOpen] = useState(false);
 
 
   return (
@@ -155,9 +154,24 @@ const steps = [
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-12 py-6 text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-yellow-500/25 rounded-xl"
+              onClick={() => setOpen(true)}
             >
               Book Appointment Now
             </Button>
+            {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="bg-gray-900 text-white rounded-xl p-8 w-full max-w-lg relative">
+            <button
+              className="absolute top-4 right-4 text-2xl"
+              onClick={() => setOpen(false)}
+            >
+              &times;
+            </button>
+            {/* Form goes here */}
+            <BookForm onClose={() => setOpen(false)} />
+          </div>
+        </div>
+      )}
           </div>
         </div>
       </section>
@@ -195,45 +209,7 @@ const steps = [
 
 <hr className="border-t border-yellow-300 my-8" />
 
-{/* counter section already i had
-  <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-    {/* Counter 1 - Years in Repair 
-    <div className="bg-white/60 backdrop-blur-xl border border-yellow-200/40 rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:border-yellow-400">
-      <div className="mb-4 text-yellow-600 flex justify-center">
-        <Wrench className="w-12 h-12" strokeWidth={1.5} />
-      </div>
-      <div className="text-5xl font-extrabold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
-        {yearsCount}+
-      </div>
-      <p className="mt-2 text-lg font-medium text-gray-600">Years in Repair</p>
-    </div>
-
-    {/* Counter 2 - Happy Customers 
-    <div className="bg-white/60 backdrop-blur-xl border border-yellow-200/40 rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:border-yellow-400">
-      <div className="mb-4 text-yellow-600 flex justify-center">
-        <CheckCircle className="w-12 h-12" strokeWidth={1.5} />
-      </div>
-      <div className="text-5xl font-extrabold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
-        {customersCount.toLocaleString()}+
-      </div>
-      <p className="mt-2 text-lg font-medium text-gray-600">Happy Customers</p>
-    </div>
-
-    {/* Counter 3 - Serviced Cars 
-    <div className="bg-white/60 backdrop-blur-xl border border-yellow-200/40 rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:border-yellow-400">
-      <div className="mb-4 text-yellow-600 flex justify-center">
-        <Car className="w-12 h-12" strokeWidth={1.5} />
-      </div>
-      <div className="text-5xl font-extrabold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
-        {carsCount.toLocaleString()}+
-      </div>
-      <p className="mt-2 text-lg font-medium text-gray-600">Serviced Cars</p>
-    </div>
-  </div>
-</section>*/}
-
-{/* added 22 */}
+{/* counter services */}
 
 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
   <CountersSection
@@ -246,7 +222,7 @@ const steps = [
 
   {/* Our Section */}
 
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
+<section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-16">
       <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-6">Our Premium Services</h2>
