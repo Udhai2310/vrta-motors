@@ -245,6 +245,7 @@ const Header: React.FC = () => {
                     <div
                       className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 bg-black/80 backdrop-blur-md shadow-2xl p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[90vw] max-w-6xl border border-yellow-500/20"
                     >
+
                       {[
   {
     title: "Periodic Services & Suspension Repairs",
@@ -308,6 +309,7 @@ const Header: React.FC = () => {
     </div>
   </div>
 ))}
+
                     </div>
                   )}
                 </div>
