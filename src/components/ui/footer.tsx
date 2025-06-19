@@ -24,10 +24,10 @@ const Footer: React.FC = () => {
           <div className="space-y-6 pl-20">
             <h3 className="text-lg font-bold text-yellow-400 mb-2">Quick Links</h3>
             <ul className="space-y-2 text-gray-300 font-medium">
-              <li> <a href="#" className="hover:text-yellow-400">About Us</a></li>
+              <li> <a href="/about" className="hover:text-yellow-400">About Us</a></li>
               <li> <a href="#" className="hover:text-yellow-400">Services</a></li>
-              <li> <a href="#" className="hover:text-yellow-400">Careers</a></li>
-              <li> <a href="#" className="hover:text-yellow-400">Contact Us</a></li>
+              <li> <a href="/about" className="hover:text-yellow-400">Careers</a></li>
+              <li> <a href="/contact" className="hover:text-yellow-400">Contact Us</a></li>
             </ul>
           </div>
 

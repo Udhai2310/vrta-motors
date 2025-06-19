@@ -201,7 +201,8 @@ const steps = [
       it deserves. Trust us to keep your car running smoothly, safely, and efficiently, so you can drive 
       with complete confidence knowing your vehicle is in expert hands.
     </p>
-    <button className="px-6 py-2 bg-yellow-500 text-black font-semibold rounded shadow hover:bg-yellow-600 transition">
+    <button className="px-6 py-2 bg-yellow-500 text-black font-semibold rounded shadow hover:bg-yellow-600 transition"
+      onClick={() => navigate("/about")}>
       Read More
     </button>
   </div>
