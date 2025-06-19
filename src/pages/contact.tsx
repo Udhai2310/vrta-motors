@@ -50,15 +50,14 @@ const Contact: React.FC = () => {
           <PhoneCall className="h-5 w-5 text-yellow-500" /> +91 9840364849
         </p>
         <p className="flex items-center gap-3 text-gray-800">
-          <Mail className="h-5 w-5 text-yellow-500" /> info@auto.in
+          <Mail className="h-5 w-5 text-yellow-500" /> vrta@gmail.com
         </p>
       </div>
 
       <div className="space-y-4 pt-4">
         <h3 className="text-xl font-semibold">Address:</h3>
         <p className="flex items-center gap-3 text-gray-800">
-          <MapPin className="h-5 w-5 text-yellow-500" /> Symphony Motors,
-          OMR, Sholinganallur, Chennai
+          <MapPin className="h-5 w-5 text-yellow-500" /> VRTA Motors, Krishnaveni Nagar, Medavakkam, Chennai, Tamil Nadu 600100
         </p>
       </div>
     </div>
@@ -69,18 +68,23 @@ const Contact: React.FC = () => {
 </section>
 
 {/* map */}
+
 <section className="w-full">
   <iframe
-    title="Garage Location"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0953468291263!2d80.22905781482058!3d12.89885779089544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525dc0f4ed2793%3A0x88d46c6bd738c6e1!2sSymphony%20Enterprises!5e0!3m2!1sen!2sin!4v1718287700872!5m2!1sen!2sin"
+    title="VRTA Motors Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.0340994609537!2d80.18800940000001!3d12.9055289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525c028135cb79%3A0x23623b09e69daebb!2sV.R.T.A.%20Motors!5e0!3m2!1sen!2sin!4v1750322896431!5m2!1sen!2sin"
     width="100%"
     height="450"
+    style={{ border: 0 }}
     allowFullScreen
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
-    className="border-0 grayscale"
+    className="grayscale"
   ></iframe>
 </section>
+
+
+
 
 
 

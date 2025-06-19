@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <img src={logo} alt="VRTA Motors" className="h-14 w-auto" />
               <p className="text-sm text-gray-300 leading-6 font-medium">
                 VRTA Motors<br /> Multi-Brand<br />
-                Auto Street, City, State
+                Medavakkam, Chennai, Tamil Nadu 
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold text-yellow-400">Contact Info</h3>
             <div className="flex items-center space-x-2 font-medium text-gray-300">
               <Mail className="h-5 w-5 text-yellow-400"/>
-              <span>info@vrtamotors.com</span>
+              <span>vrta@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2 font-medium text-gray-300">
               <Phone className="h-5 w-5 text-yellow-400"/>
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2 font-medium text-gray-300">
               <MapPin className="h-5 w-5 text-yellow-400"/>
-              <span>123 Auto Street, City, State</span>
+              <span> Krishnaveni Nagar, Medavakkam, Chennai, Tamil Nadu 600100</span>
             </div>
 
             <div className="mt-30">

@@ -107,51 +107,57 @@ const About: React.FC = () => {
 {/* FAQ Section */}
 <section className="bg-white py-16 px-6">
   <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-semibold text-gray-900 mb-10 text-left">
+    <h2 className="text-4xl font-bold text-gray-900 mb-12 text-left">
       Frequently Asked Questions
     </h2>
+
     <div className="space-y-6">
       {[
         {
           question: "What types of services do you offer?",
           answer:
-            "We provide a wide range of automotive services including diagnostics, routine maintenance, major repairs, part replacements, and multi-brand servicing."
+            "We provide a wide range of services, including accidental repairs, engine overhauls, transmission work, and all electrical services. Our experienced technicians ensure quality care for all vehicle types."
         },
         {
           question: "How long does a typical repair take?",
           answer:
-            "The time varies depending on the repair. Minor issues can be resolved in a few hours, while major repairs may take a day or more. We always aim for timely delivery."
+            "Repair times vary based on the service needed, but we strive for quick turnaround times without compromising quality. Our team will provide an estimated completion time when you book your service."
         },
         {
           question: "Do you offer warranties on your services?",
           answer:
-            "Yes, we offer warranties on select services and parts. Specific warranty details will be shared at the time of service."
+            "Yes, we stand behind our work and offer warranties on repairs and parts. This commitment ensures you can trust the quality of our services."
         },
         {
           question: "Can I schedule an appointment online?",
           answer:
-            "Absolutely! You can book your service appointment through our website for a hassle-free experience."
+            "Absolutely! You can easily book an appointment through our website’s “Book Now” page at your convenience. Our team will confirm your booking promptly."
         },
         {
           question: "What payment methods do you accept?",
           answer:
-            "We accept UPI, debit/credit cards, net banking, and cash payments for your convenience."
+            "We accept various payment methods, including cash, credit cards, and digital payment options. Our goal is to provide you with a hassle-free payment experience."
         },
         {
           question: "How do I know if my vehicle needs repairs?",
           answer:
-            "Look out for warning lights, unusual noises, decreased performance, or fluid leaks. When in doubt, visit us for a quick inspection."
+            "Pay attention to unusual sounds, warning lights, or changes in performance. If you notice any issues, it’s best to consult our technicians for a comprehensive inspection."
         }
-      ].map((item, index) => (
-        <details
-          key={index}
-          className="border border-gray-300 rounded-lg px-6 py-5 cursor-pointer transition-all hover:shadow-lg hover:bg-yellow-50"
-        >
-          <summary className="font-semibold text-lg text-gray-800">
-            {item.question}
-          </summary>
-          <p className="mt-3 text-gray-600 leading-relaxed">{item.answer}</p>
-        </details>
+       ].map((item, index) => (
+        <div key={index}>
+          {/* Question Box */}
+          <details className="group border border-gray-300 rounded-lg overflow-hidden">
+            <summary className="bg-gray-100 px-6 py-4 text-lg font-semibold text-gray-900 cursor-pointer flex justify-between items-center hover:bg-yellow-50 transition-all duration-300">
+              {item.question}
+              <span className="text-black transform group-open:rotate-180 transition-transform">▲</span>
+            </summary>
+
+            {/* Answer Box */}
+            <div className="bg-white px-6 py-4 text-gray-700 text-base leading-relaxed border-t border-gray-200">
+              {item.answer}
+            </div>
+          </details>
+        </div>
       ))}
     </div>
   </div>

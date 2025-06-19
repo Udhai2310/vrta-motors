@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { Link,useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Car } from "lucide-react";
 import logo from '@/assets/logo.jpg';
+import minorservices from '@/assets/minor-Services.jpg';
+import transmission from '@/assets/transmission.jpg';
+import diagnostics from '@/assets/diagnostics.jpg';   
+import electrical from '@/assets/electrical.jpg';
+import coding from '@/assets/coding.jpg';
+import acservice from '@/assets/ac-service.jpg';
 
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <nav className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 shadow-2xl relative z-50 border-b border-yellow-500/30 backdrop-blur-sm">
@@ -21,41 +28,115 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+<div className="hidden md:flex items-center space-x-8">
+  {[
+    { label: "Home", path: "/" },
+    { label: "Services", path: "/services" },
+    { label: "About", path: "/about" },
+    { label: "Contact", path: "/contact" },
+  ].map((item) =>
+    item.label === "Services" ? (
+      <div
+        key={item.label}
+        className="relative py-2"
+        onMouseEnter={() => {
+          clearTimeout((window as any).dropdownTimeout);
+          setShowDropdown(true);
+        }}
+        onMouseLeave={() => {
+          (window as any).dropdownTimeout = setTimeout(() => {
+            setShowDropdown(false);
+          }, 200); // Delay so user can move mouse
+        }}
+      >
+        <span className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium flex items-center cursor-pointer">
+          Services ▾
+        </span>
+
+        {showDropdown && (
+          <div
+            className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 bg-black/80 backdrop-blur-md shadow-2xl p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[90vw] max-w-6xl border border-yellow-500/20"
+            onMouseEnter={() => clearTimeout((window as any).dropdownTimeout)}
+            onMouseLeave={() => {
+              (window as any).dropdownTimeout = setTimeout(() => {
+                setShowDropdown(false);
+              }, 200);
+            }}
+          >
             {[
-              { label: "Home", path: "/" },
-              { label: "Services", path: "/services" },
-              { label: "About", path: "/about" },
-              { label: "Contact", path: "/contact" },
-            ].map((item) => 
-              item.label === "Services" ? (
-    <span
-      key={item.label}
-      className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium relative group py-2 cursor-pointer"
-      onClick={() => {
-        if (location.pathname === "/") {
-          document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
-        } else {
-          navigate("/", { state: { scrollTo: "services" } });
-        }
-      }}
-    >
-      {item.label}
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
-      <span className="absolute inset-0 rounded-lg bg-yellow-400/5 opacity-0 transition-all duration-300 group-hover:opacity-100 -z-10"></span>
-    </span>
-  ) : (
-              <Link
-                key={item.label}
-                to={item.path}
-                className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium relative group py-2"
+              {
+                title: "Periodic Services & Suspension Repairs",
+                img: minorservices,
+              },
+              {
+                title: "Engine Overhaul & Automatic Transmission Overhaul",
+                img: transmission,
+              },
+              {
+                title: "Full Body Painting & Accident Repairs",
+                img: diagnostics,
+              },
+              {
+                title: "All Electrical & Electronic Services",
+                img: electrical,
+              },
+              {
+                title: "Programming & Coding",
+                img: coding,
+              },
+              {
+                title: "AC and services",
+                img: acservice,
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="h-64 bg-cover bg-center rounded-xl text-white flex flex-col justify-between p-4 hover:scale-105 transition-all duration-300 relative"
+                style={{ backgroundImage: `url(${service.img})` }}
               >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
-                <span className="absolute inset-0 rounded-lg bg-yellow-400/5 opacity-0 transition-all duration-300 group-hover:opacity-100 -z-10"></span>
-              </Link>
+                <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
+                <div className="relative z-10 mt-auto">
+                  <h3 className="font-semibold text-xl mb-2">{service.title}</h3>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => {
+                        setShowDropdown(false);
+                        navigate('/ReadMore');
+                      }}
+                      className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all"
+                    >
+                      Read More
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowDropdown(false);
+                        navigate('/contact');
+                      }}
+                      className="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all"
+                    >
+                      Contact Us
+                    </button>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
+        )}
+      </div>
+    ) : (
+      <Link
+        key={item.label}
+        to={item.path}
+        className="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium relative group py-2"
+      >
+        {item.label}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+        <span className="absolute inset-0 rounded-lg bg-yellow-400/5 opacity-0 transition-all duration-300 group-hover:opacity-100 -z-10"></span>
+      </Link>
+    )
+  )}
+</div>
+
 
           {/* Contact Number */}
           <div className="hidden md:flex items-center space-x-3 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 px-6 py-3 rounded-xl border border-yellow-500/30 backdrop-blur-sm hover:bg-yellow-500/20 transition-all duration-300">
