@@ -73,8 +73,8 @@ export default [
         headerDesc:"At VRTA Motors, we combine expertise and cutting-edge technology to tackle complex repairs like engine and transmission overhauls. Trust us to bring your vehicle back to peak performance. Contact us today to schedule an assessment.",
         pageTitle:"Automatic Transmission Overhaul: Seamless Gear Transitions",
         pageDesc:"A faulty transmission can disrupt your driving experience. Our automatic transmission overhaul services focus on restoring smooth gear shifts and optimal performance. We handle:",
-        backgroundImg:" ",
-        pageImg:" ",
+        backgroundImg:"transmission.jpg",
+        pageImg:"transmission.jpg",
         pageTitle1:"Engine Overhaul: Reviving Your Car’s Heart",
         pageDesc1:"When your car’s engine shows signs of wear, an engine overhaul is the solution to restore its performance and efficiency. At Symphony Motors, we specialize in complete engine rebuilds that breathe new life into your vehicle. Our services include:",
         

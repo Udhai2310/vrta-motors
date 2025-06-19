@@ -2,13 +2,10 @@ import React,{ useState, useEffect, useRef } from "react";
 import { Wrench, Car, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
 import shopImg from '@/assets/shop.jpg';
 import workImg from '@/assets/work.jpg';
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import ReadMore from "./ReadMore.tsx";
-import readmoreData from "./readmoreData.js";
 import ReadMoreCard from "@/components/ui/ReadMoreCard.tsx";
 
 
@@ -208,7 +205,7 @@ const steps = [
 
   {/* Our Section */}
 
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
+<section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-16">
       <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-6">Our Premium Services</h2>
