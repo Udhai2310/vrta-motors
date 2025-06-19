@@ -195,45 +195,7 @@ const steps = [
 
 <hr className="border-t border-yellow-300 my-8" />
 
-{/* counter section already i had
-  <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-    {/* Counter 1 - Years in Repair 
-    <div className="bg-white/60 backdrop-blur-xl border border-yellow-200/40 rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:border-yellow-400">
-      <div className="mb-4 text-yellow-600 flex justify-center">
-        <Wrench className="w-12 h-12" strokeWidth={1.5} />
-      </div>
-      <div className="text-5xl font-extrabold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
-        {yearsCount}+
-      </div>
-      <p className="mt-2 text-lg font-medium text-gray-600">Years in Repair</p>
-    </div>
-
-    {/* Counter 2 - Happy Customers 
-    <div className="bg-white/60 backdrop-blur-xl border border-yellow-200/40 rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:border-yellow-400">
-      <div className="mb-4 text-yellow-600 flex justify-center">
-        <CheckCircle className="w-12 h-12" strokeWidth={1.5} />
-      </div>
-      <div className="text-5xl font-extrabold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
-        {customersCount.toLocaleString()}+
-      </div>
-      <p className="mt-2 text-lg font-medium text-gray-600">Happy Customers</p>
-    </div>
-
-    {/* Counter 3 - Serviced Cars 
-    <div className="bg-white/60 backdrop-blur-xl border border-yellow-200/40 rounded-2xl p-8 shadow-xl hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:border-yellow-400">
-      <div className="mb-4 text-yellow-600 flex justify-center">
-        <Car className="w-12 h-12" strokeWidth={1.5} />
-      </div>
-      <div className="text-5xl font-extrabold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
-        {carsCount.toLocaleString()}+
-      </div>
-      <p className="mt-2 text-lg font-medium text-gray-600">Serviced Cars</p>
-    </div>
-  </div>
-</section>*/}
-
-{/* added 22 */}
+{/* counter services */}
 
 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
   <CountersSection
