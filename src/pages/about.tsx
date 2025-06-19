@@ -99,10 +99,64 @@ const About: React.FC = () => {
   </div>
 </section>
 
-{/* space */}
+{/* space 
 <section>
     <h1>    -------</h1>
+</section>*/}
+
+{/* FAQ Section */}
+<section className="bg-white py-16 px-6">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-semibold text-gray-900 mb-10 text-left">
+      Frequently Asked Questions
+    </h2>
+    <div className="space-y-6">
+      {[
+        {
+          question: "What types of services do you offer?",
+          answer:
+            "We provide a wide range of automotive services including diagnostics, routine maintenance, major repairs, part replacements, and multi-brand servicing."
+        },
+        {
+          question: "How long does a typical repair take?",
+          answer:
+            "The time varies depending on the repair. Minor issues can be resolved in a few hours, while major repairs may take a day or more. We always aim for timely delivery."
+        },
+        {
+          question: "Do you offer warranties on your services?",
+          answer:
+            "Yes, we offer warranties on select services and parts. Specific warranty details will be shared at the time of service."
+        },
+        {
+          question: "Can I schedule an appointment online?",
+          answer:
+            "Absolutely! You can book your service appointment through our website for a hassle-free experience."
+        },
+        {
+          question: "What payment methods do you accept?",
+          answer:
+            "We accept UPI, debit/credit cards, net banking, and cash payments for your convenience."
+        },
+        {
+          question: "How do I know if my vehicle needs repairs?",
+          answer:
+            "Look out for warning lights, unusual noises, decreased performance, or fluid leaks. When in doubt, visit us for a quick inspection."
+        }
+      ].map((item, index) => (
+        <details
+          key={index}
+          className="border border-gray-300 rounded-lg px-6 py-5 cursor-pointer transition-all hover:shadow-lg hover:bg-yellow-50"
+        >
+          <summary className="font-semibold text-lg text-gray-800">
+            {item.question}
+          </summary>
+          <p className="mt-3 text-gray-600 leading-relaxed">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
 </section>
+
     </>
   );
 };
