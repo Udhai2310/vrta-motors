@@ -11,7 +11,7 @@ const ContactActions = () => {
           <div className="max-w-6xl mx-auto grid grid-cols-3 gap-2 px-4">
             {/* WhatsApp */}
             <a
-              href="https://wa.me/919840364849"
+              href="https://wa.me/919962098589"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-green-500 text-white hover:text-black flex flex-col items-center justify-center space-y-2 p-4 rounded-xl shadow-lg border border-gray-700 hover:border-green-400"

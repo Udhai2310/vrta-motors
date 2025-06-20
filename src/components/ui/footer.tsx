@@ -1,6 +1,9 @@
 import React from "react";
 import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 const Footer: React.FC = () => {
   return (
@@ -35,7 +38,9 @@ const Footer: React.FC = () => {
            <div className="space-y-6 pr-20 ">
             <h3 className="text-xl font-bold text-yellow-400 mb-6">Services</h3>
             <ul className="space-y-3 font-medium">
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Periodic Services & Suspension Repair</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300"
+              onClick={(e) => {e.preventDefault();navigate('/readmore', { state: { key: service.matchId } });}}>
+                Periodic Services & Suspension Repair</a></li>
               <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Engine Overhaul & transmission Overhaul</a></li>
               <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Full Body Painting & Accident Repairs</a></li>
               <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">All Electrical & Electronic Services</a></li>
