@@ -1,19 +1,31 @@
 import React,{ useState, useEffect, useRef } from "react";
 import { Wrench, Car, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import shopImg from '@/assets/shop.jpg';
 import workImg from '@/assets/work.jpg';
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import ReadMoreCard from "@/components/ui/ReadMoreCard.tsx";
 import BookForm from '../components/bookform';
+import { useLocation, useSearchParams } from "react-router-dom";
 
 
 const Index = () => {
 
  
-  const navigate = useNavigate();
+const location = useLocation();
+  const [searchParams] = useSearchParams();
+ 
+  useEffect(() => {
+    if (location.hash === "#services") {
+      const el = document.getElementById("services");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+  
 
   const useCounter = (end: number, duration: number = 2000) => {
     const [count, setCount] = useState(0);
@@ -201,10 +213,7 @@ const steps = [
       it deserves. Trust us to keep your car running smoothly, safely, and efficiently, so you can drive 
       with complete confidence knowing your vehicle is in expert hands.
     </p>
-    <button className="px-6 py-2 bg-yellow-500 text-black font-semibold rounded shadow hover:bg-yellow-600 transition"
-      onClick={() => navigate("/about")}>
-      Read More
-    </button>
+   
   </div>
 </section>
 

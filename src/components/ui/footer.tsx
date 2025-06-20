@@ -1,9 +1,8 @@
 import React from "react";
 import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const navigate = useNavigate();
 
 const Footer: React.FC = () => {
   return (
@@ -27,25 +26,38 @@ const Footer: React.FC = () => {
           <div className="space-y-6 pl-20">
             <h3 className="text-lg font-bold text-yellow-400 mb-2">Quick Links</h3>
             <ul className="space-y-2 text-gray-300 font-medium">
-              <li> <a href="/about" className="hover:text-yellow-400">About Us</a></li>
-              <li> <a href="#" className="hover:text-yellow-400">Services</a></li>
-              <li> <a href="/about" className="hover:text-yellow-400">Careers</a></li>
-              <li> <a href="/contact" className="hover:text-yellow-400">Contact Us</a></li>
+            <li><Link to="/about" className="hover:text-yellow-400">About Us</Link></li>
+            <li><Link to="/#services" className="hover:text-yellow-400">Services</Link></li>
+           <li><Link to="/contact" className="hover:text-yellow-400">Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Services */}
-           <div className="space-y-6 pr-20 ">
-            <h3 className="text-xl font-bold text-yellow-400 mb-6">Services</h3>
-            <ul className="space-y-3 font-medium">
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300"
-              onClick={(e) => {e.preventDefault();navigate('/readmore')}}>
-                Periodic Services & Suspension Repair</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Engine Overhaul & transmission Overhaul</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Full Body Painting & Accident Repairs</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">All Electrical & Electronic Services</a></li>
-            </ul>
-          </div>
+<div className="space-y-6 pr-20 ">
+  <h3 className="text-xl font-bold text-yellow-400 mb-6">Services</h3>
+  <ul className="space-y-3 font-medium">
+    <li>
+      <Link to="/#services?highlight=1" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">
+        Periodic Services & Suspension Repair
+      </Link>
+    </li>
+    <li>
+      <Link to="/#services?highlight=2" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">
+        Engine Overhaul & transmission Overhaul
+      </Link>
+    </li>
+    <li>
+      <Link to="/#services?highlight=3" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">
+        Full Body Painting & Accident Repairs
+      </Link>
+    </li>
+    <li>
+      <Link to="/#services?highlight=4" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">
+        All Electrical & Electronic Services
+      </Link>
+    </li>
+  </ul>
+</div>
 
 
           {/* Contact Info */}
@@ -73,7 +85,7 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 rounded-xl hover:bg-gradient-to-br hover:from-yellow-500 hover:to-yellow-600 hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-3 shadow-lg">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://wa.me/9962098589" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 rounded-xl hover:bg-gradient-to-br hover:from-yellow-500 hover:to-yellow-600 hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-3 shadow-lg">
+              <a href="https://wa.me/9876543210" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 rounded-xl hover:bg-gradient-to-br hover:from-yellow-500 hover:to-yellow-600 hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-3 shadow-lg">
                 <MessageCircle className="h-6 w-6" />
               </a>
               </div>
