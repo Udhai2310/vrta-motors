@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold text-yellow-400 mb-6">Services</h3>
             <ul className="space-y-3 font-medium">
               <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300"
-              onClick={(e) => {e.preventDefault();navigate('/readmore', { state: { key: service.matchId } });}}>
+              onClick={(e) => {e.preventDefault();navigate('/readmore')}}>
                 Periodic Services & Suspension Repair</a></li>
               <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Engine Overhaul & transmission Overhaul</a></li>
               <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-all duration-300">Full Body Painting & Accident Repairs</a></li>
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 rounded-xl hover:bg-gradient-to-br hover:from-yellow-500 hover:to-yellow-600 hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-3 shadow-lg">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://wa.me/9876543210" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 rounded-xl hover:bg-gradient-to-br hover:from-yellow-500 hover:to-yellow-600 hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-3 shadow-lg">
+              <a href="https://wa.me/9962098589" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-4 rounded-xl hover:bg-gradient-to-br hover:from-yellow-500 hover:to-yellow-600 hover:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-3 shadow-lg">
                 <MessageCircle className="h-6 w-6" />
               </a>
               </div>
