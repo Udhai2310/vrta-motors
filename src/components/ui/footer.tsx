@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold text-yellow-400">Contact Info</h3>
             <div className="flex items-center space-x-2 font-medium text-gray-300">
               <Mail className="h-5 w-5 text-yellow-400"/>
-              <span>vrta@gmail.com</span>
+              <span>vrtamotors@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2 font-medium text-gray-300">
               <Phone className="h-5 w-5 text-yellow-400"/>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
 
         {/* Footer Bottom Text */}
         <div className="mt-10 text-center border-t border-gray-700 pt-6">
-          <p className="text-gray-500 text-sm">© 2025 VRTA Motors. All rights reserved. Designed by You</p>
+          <p className="text-gray-500 text-sm">© 2025 VRTA Motors. All rights reserved.</p>
         </div>
       </div>
     </footer>

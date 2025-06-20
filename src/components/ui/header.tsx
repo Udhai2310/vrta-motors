@@ -347,7 +347,57 @@ const Header: React.FC = () => {
         </div>
       </div>
       {/* Mobile Navigation (optional, uncomment if needed) */}
-      {/* Add if you want mobile dropdown in future */}
+{mobileMenuOpen && (
+  <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900/95 z-50 flex flex-col">
+    {/* Top bar with logo and close button */}
+    <div className="flex items-center justify-between px-6 py-4 border-b border-yellow-500/20 bg-slate-900/90">
+      <img src={logo} alt="VRTA Motors" className="h-10" />
+      <button
+        className="text-gray-300 hover:text-yellow-400 transition"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        <X className="h-8 w-8" />
+      </button>
+    </div>
+    {/* Navigation links */}
+    <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
+      <Link
+        to="/"
+        className="text-2xl font-semibold text-gray-200 hover:text-yellow-400 transition-all duration-300 tracking-wide"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Home
+      </Link>
+      <span
+        className="text-2xl font-semibold text-gray-200 hover:text-yellow-400 transition-all duration-300 tracking-wide cursor-pointer"
+        onClick={() => {
+          setMobileMenuOpen(false);
+          // Optionally, handle Services dropdown or scroll
+        }}
+      >
+        Services
+      </span>
+      <Link
+        to="/about"
+        className="text-2xl font-semibold text-gray-200 hover:text-yellow-400 transition-all duration-300 tracking-wide"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        About
+      </Link>
+      <Link
+        to="/contact"
+        className="text-2xl font-semibold text-gray-200 hover:text-yellow-400 transition-all duration-300 tracking-wide"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Contact
+      </Link>
+    </nav>
+    {/* Contact number at the bottom
+    <div className="flex justify-center items-center py-6 border-t border-yellow-500/20 bg-slate-900/90">
+      <span className="text-yellow-400 font-semibold text-lg tracking-wider">9840364849</span>
+    </div> */}
+  </div>
+)}
     </nav>
   );
 };

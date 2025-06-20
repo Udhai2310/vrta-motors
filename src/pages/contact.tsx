@@ -47,10 +47,10 @@ const Contact: React.FC = () => {
       <div className="space-y-4">
         <h3 className="text-xl font-semibold">Contact Number:</h3>
         <p className="flex items-center gap-3 text-gray-800">
-          <PhoneCall className="h-5 w-5 text-yellow-500" /> +91 9840364849
+          <PhoneCall className="h-5 w-5 text-yellow-500" /> 9840364849, 9962098589
         </p>
         <p className="flex items-center gap-3 text-gray-800">
-          <Mail className="h-5 w-5 text-yellow-500" /> vrta@gmail.com
+          <Mail className="h-5 w-5 text-yellow-500" /> vrtamotors@gmail.com
         </p>
       </div>
 

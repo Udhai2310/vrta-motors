@@ -46,7 +46,7 @@ const location = useLocation();
     return count;
   };
 
-  const yearsCount = useCounter(15);
+  const yearsCount = useCounter(20);
   const customersCount = useCounter(2500);
   const carsCount = useCounter(5000);
 
@@ -219,18 +219,7 @@ const steps = [
 
 <hr className="border-t border-yellow-300 my-8" />
 
-{/* counter services */}
-
-<section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
-  <CountersSection
-  yearsCount={yearsCount}
-  customersCount={customersCount}
-  carsCount={carsCount}
-/>
-
-</section>
-
-  {/* Our Section */}
+{/* Our Section */}
 
 <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
   <div className="max-w-6xl mx-auto">
@@ -286,6 +275,21 @@ const steps = [
     </div>
   </div>
 </section>
+
+<hr className="border-t border-yellow-300 my-8" />
+
+{/* counter services */}
+
+<section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
+  <CountersSection
+  yearsCount={yearsCount}
+  customersCount={customersCount}
+  carsCount={carsCount}
+/>
+
+</section>
+
+  
 
 
 
