@@ -171,7 +171,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import logo from '@/assets/logo.jpg';
-import minorservices from '@/assets/minor-Services.jpg';
+import minorservices from '@/assets/minor-services.jpg';
 import transmission from '@/assets/transmission.jpg';
 import diagnostics from '@/assets/diagnostics.jpg';   
 import electrical from '@/assets/electrical.jpg';
