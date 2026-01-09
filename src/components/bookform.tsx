@@ -15,7 +15,7 @@ function BookForm({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const whatsappNumber = "917200185477"; // Your WhatsApp number (with country code, no +)
+    const whatsappNumber = "919840364849"; // Your WhatsApp number (with country code, no +)
     const text = `Name: ${form.name}%0aMobile: ${form.mobile}%0aEmail: ${form.email}%0aService: ${form.service}%0aMessage: ${form.message}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
     onClose();
