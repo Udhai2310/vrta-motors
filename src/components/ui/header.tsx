@@ -178,7 +178,6 @@ import electrical from '@/assets/electrical.jpg';
 import coding from '@/assets/coding.jpg';
 import acservice from '@/assets/ac-service.jpg';
 import ReadMoreData from "@/pages/readmoreData.js";
-
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
